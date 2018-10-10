@@ -6,7 +6,6 @@ How to make your spelling correction algorithm recognize the difference mentione
 
 
 
-
 Required Python packages: re, collections, nltk, numpy, operator, csv, sys
 Compatibility: The program is tested to run on Python 3.6.5 using Anaconda distribution
 
