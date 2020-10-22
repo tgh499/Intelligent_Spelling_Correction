@@ -10,7 +10,7 @@ def wordCounter():
     """
     Get a corpus of valid words
     """
-    text = (open('big.txt','r')).read()
+    text = (open('./resources/big.txt','r')).read()
     words = re.findall(r'\w+', text.lower())
     wordTypes_n_counts = Counter(words) # types = 32198, tokens = 1115585
     return wordTypes_n_counts
@@ -19,7 +19,7 @@ def nameList():
     """
     Get a corpus of common names
     """
-    name = (open('names.txt','r').read())
+    name = (open('./resources/names.txt','r').read())
     names = re.findall(r'\w+', name)
     name_counts = Counter(names)
     return name_counts
@@ -29,7 +29,7 @@ def bigramCorpus(prevWord, nextWord):
     Get a corpus of precomputed bigrams
 
     """
-    f = open('count_2w.txt','r')
+    f = open('./resources/count_2w.txt','r')
     lines = f.readlines()
     bigram_dict = {}
     for line in lines:
@@ -47,10 +47,10 @@ def findCost(a, b, operation):
     Return cost for insert, delete, substitute operations
     from Peter Norvig's list of errors.
     """
-    insert = np.genfromtxt('insert.csv', delimiter=',')
-    delete = np.genfromtxt('del.csv', delimiter=',')
-    substitute = np.genfromtxt('substitute.csv', delimiter=',')
-    reversal = np.genfromtxt('reversal.csv', delimiter=',')
+    insert = np.genfromtxt('./CSV_files/insert.csv', delimiter=',')
+    delete = np.genfromtxt('./CSV_files/del.csv', delimiter=',')
+    substitute = np.genfromtxt('./CSV_files/substitute.csv', delimiter=',')
+    reversal = np.genfromtxt('./CSV_files/reversal.csv', delimiter=',')
     cost = 1
     letters    = 'abcdefghijklmnopqrstuvwxyz'
     letter_dict = {}
